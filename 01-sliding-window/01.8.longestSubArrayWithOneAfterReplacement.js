@@ -11,9 +11,11 @@ function longestSubArrayWithOneAfterReplacement(nums = [], K) {
     }
 
     if ((windowEnd - windowStart + 1) - max1Count > K) {
-      if (num === 0) {
-
+      if (nums[windowStart] === 1) {
+        max1Count -= 1;
       }
+
+      windowStart += 1;
     }
 
     maxLength = Math.max(maxLength, windowEnd - windowStart + 1);
